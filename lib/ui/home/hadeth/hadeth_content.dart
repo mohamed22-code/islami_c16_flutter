@@ -13,20 +13,29 @@ class HadethContent extends StatefulWidget {
 class _HadethContentState extends State<HadethContent> {
   final CarouselController controller = CarouselController(initialItem: 0);
   List<Hadeth> hadethList = [];
+
+  static const int carouselMainPageWeight = 8;
+  static const int carouselSecondaryPageSpaceing = 1;
   @override
   Widget build(BuildContext context) {
     if (allHadeth.isEmpty) {
       loadHadeth();
     }
     return Container(
-        child: allHadeth.isEmpty ? Center(child: CircularProgressIndicator()) :
-        CarouselView.weighted(
-          controller: controller,
-          itemSnapping: true,
-          flexWeights: const <int>[1, 8, 1],
-          children: allHadeth.map((hadeth) {
-            return HadethCarouselView(hadeth);
-          }).toList(),)
+      child: allHadeth.isEmpty
+          ? Center(child: CircularProgressIndicator())
+          : CarouselView.weighted(
+              controller: controller,
+              itemSnapping: true,
+              flexWeights: const <int>[
+                carouselSecondaryPageSpaceing,
+                carouselMainPageWeight,
+                carouselSecondaryPageSpaceing,
+              ],
+              children: allHadeth.map((hadeth) {
+                return HadethCarouselView(hadeth);
+              }).toList(),
+            ),
     );
   }
 
@@ -34,7 +43,8 @@ class _HadethContentState extends State<HadethContent> {
 
   void loadHadeth() async {
     String fileContent = await rootBundle.loadString(
-        "assets/files/ahadeth.txt");
+      "assets/files/ahadeth.txt",
+    );
     List<String> hadethContentList = fileContent.trim().split('#');
     for (int i = 0; i < hadethContentList.length; i++) {
       String singleHadethContent = hadethContentList[i].trim();
@@ -45,8 +55,6 @@ class _HadethContentState extends State<HadethContent> {
       Hadeth hadeth = Hadeth(title, content);
       allHadeth.add(hadeth);
     }
-    setState(() {
-
-    });
+    setState(() {});
   }
 }

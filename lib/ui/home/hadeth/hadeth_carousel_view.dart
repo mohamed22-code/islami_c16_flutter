@@ -35,6 +35,7 @@ class HadethCarouselView extends StatelessWidget {
                 style: Theme.of(
                   context,
                 ).textTheme.titleMedium?.copyWith(color: Colors.black),
+                textDirection: TextDirection.rtl,
               ),
             ),
           ),

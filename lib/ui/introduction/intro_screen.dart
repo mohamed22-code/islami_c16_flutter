@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami/ui/design.dart';
 import 'package:islami/ui/home/HomeScreen.dart';
-import 'package:islami/ui/introduction/intro_page1.dart';
-import 'package:islami/ui/introduction/intro_page2.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-import 'intro_page3.dart';
-import 'intro_page4.dart';
-import 'intro_page5.dart';
 
 class IntroScreen extends StatefulWidget {
   static const String routeName = 'intro';
@@ -37,11 +32,11 @@ class _IntroScreenState extends State<IntroScreen> {
               });
             },
             children: [
-              IntroPage1(),
-              IntroPage2(),
-              IntroPage3(),
-              IntroPage4(),
-              IntroPage5(),
+              Container(child: Image.asset(AppImages.introPage1)),
+              Container(child: Image.asset(AppImages.introPage2)),
+              Container(child: Image.asset(AppImages.introPage3)),
+              Container(child: Image.asset(AppImages.introPage4)),
+              Container(child: Image.asset(AppImages.introPage5)),
             ],
           ),
           Container(

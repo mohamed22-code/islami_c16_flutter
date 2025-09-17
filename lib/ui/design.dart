@@ -18,8 +18,15 @@ class AppImages {
   static const String ic_hadeth = 'assets/images/ic_hadeth.svg';
   static const String ic_chapter = 'assets/images/ic_chapter.svg';
   static const String background = 'assets/images/Background.jpg';
+  static const String introPage1 = 'assets/images/intro_page1.png';
+  static const String introPage2 = 'assets/images/intro_page2.png';
+  static const String introPage3 = 'assets/images/intro_page3.png';
+  static const String introPage4 = 'assets/images/intro_page4.png';
+  static const String introPage5 = 'assets/images/intro_page5.png';
   static const String chapterDetailsBackground =
       'assets/images/chapter_details_background.png';
+  static const String hadethItemBackground =
+      'assets/images/hadith_item_background.png';
   static const String logo = 'assets/images/Logo.png';
 }
 

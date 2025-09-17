@@ -3,7 +3,8 @@
 // }
 enum AppRoutes {
   HomeScreen('home'),
-  ChapterDetails('chapter_details')
+  ChapterDetails('chapter_details'),
+  IntroScreen('intro'),
   // SuraDetails('sura_details'),
   ;
 

@@ -66,6 +66,11 @@ class AppThemes {
         fontWeight: FontWeight.bold,
         fontSize: 14,
       ),
+        bodySmall: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 12,
+        )
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppColors.primaryColor,

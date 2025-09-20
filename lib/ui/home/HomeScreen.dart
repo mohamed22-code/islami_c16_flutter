@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:islami/ui/common/app_screen_rapper.dart';
 import 'package:islami/ui/design.dart';
@@ -25,65 +24,76 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return AppScreenWrapper(
-      child: Scaffold(
-        appBar: AppBar(),
-        body: Column(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Image.asset(
-                AppImages.logo,
-                fit: BoxFit.fitHeight,
-                width: MediaQuery.of(context).size.width * 1,
+      child: SafeArea(
+        child: Scaffold(
+          // appBar: AppBar(),
+          body: Column(
+            children: [
+              if(selectedTabIndex != 2)
+                Expanded(
+                  flex: 2,
+                  child: Image.asset(
+                    AppImages.logo,
+                    fit: BoxFit.fitHeight,
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 1,
+                  ),
+                ),
+
+              Expanded(
+                flex: selectedTabIndex == 2 ? 2 : 9,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 18),
+                  child: tabs[selectedTabIndex],
+                ),
               ),
-            ),
-            Expanded(
-              flex: 8,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 18),
-                child: tabs[selectedTabIndex],
+            ],
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: selectedTabIndex,
+            onTap: (index) {
+              setState(() {
+                selectedTabIndex = index;
+              });
+            },
+            items: [
+              BottomNavigationBarItem(
+                backgroundColor: AppColors.primaryColor,
+                icon: SvgPicture.asset(
+                    AppImages.ic_quran, width: 24, height: 24),
+                label: 'quran',
               ),
-            ),
-          ],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: selectedTabIndex,
-          onTap: (index) {
-            setState(() {
-              selectedTabIndex = index;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              backgroundColor: AppColors.primaryColor,
-              icon: SvgPicture.asset(AppImages.ic_quran, width: 24, height: 24),
-              label: 'quran',
-            ),
-            BottomNavigationBarItem(
-              backgroundColor: AppColors.primaryColor,
-              icon: SvgPicture.asset(
-                AppImages.ic_hadeth,
-                width: 24,
-                height: 24,
+              BottomNavigationBarItem(
+                backgroundColor: AppColors.primaryColor,
+                icon: SvgPicture.asset(
+                  AppImages.ic_hadeth,
+                  width: 24,
+                  height: 24,
+                ),
+                label: 'hadeth',
               ),
-              label: 'hadeth',
-            ),
-            BottomNavigationBarItem(
-              backgroundColor: AppColors.primaryColor,
-              icon: SvgPicture.asset(AppImages.ic_sebha, width: 24, height: 24),
-              label: 'sebha',
-            ),
-            BottomNavigationBarItem(
-              backgroundColor: AppColors.primaryColor,
-              icon: SvgPicture.asset(AppImages.ic_radio, width: 24, height: 24),
-              label: 'radio',
-            ),
-            BottomNavigationBarItem(
-              backgroundColor: AppColors.primaryColor,
-              icon: SvgPicture.asset(AppImages.ic_time, width: 24, height: 24),
-              label: 'player',
-            ),
-          ],
+              BottomNavigationBarItem(
+                backgroundColor: AppColors.primaryColor,
+                icon: SvgPicture.asset(
+                    AppImages.ic_sebha, width: 24, height: 24),
+                label: 'sebha',
+              ),
+              BottomNavigationBarItem(
+                backgroundColor: AppColors.primaryColor,
+                icon: SvgPicture.asset(
+                    AppImages.ic_radio, width: 24, height: 24),
+                label: 'radio',
+              ),
+              BottomNavigationBarItem(
+                backgroundColor: AppColors.primaryColor,
+                icon: SvgPicture.asset(
+                    AppImages.ic_time, width: 24, height: 24),
+                label: 'player',
+              ),
+            ],
+          ),
         ),
       ),
     );

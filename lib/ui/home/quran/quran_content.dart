@@ -14,10 +14,10 @@ class QuranContent extends StatefulWidget {
 
 class _QuranContentState extends State<QuranContent> {
   List<Chapter> filterdChapter = [];
-  final List<Chapter> chapters = Chapter.getQuranChapter();
+  final List<Chapter> chapters = Chapter.chapters;
 
-  _QuranContent() {
-    final List<Chapter> filterdChapter = chapters;
+  _QuranContentState() {
+    filterdChapter = chapters;
   }
 
   @override

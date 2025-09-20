@@ -18,11 +18,14 @@ class AppImages {
   static const String ic_hadeth = 'assets/images/ic_hadeth.svg';
   static const String ic_chapter = 'assets/images/ic_chapter.svg';
   static const String background = 'assets/images/Background.jpg';
+  static const String sebhaBackground = 'assets/images/sebhaBackground.png';
+  static const String sebhaBackground2 = 'assets/images/sebhaBackground2.png';
   static const String introPage1 = 'assets/images/intro_page1.png';
   static const String introPage2 = 'assets/images/intro_page2.png';
   static const String introPage3 = 'assets/images/intro_page3.png';
   static const String introPage4 = 'assets/images/intro_page4.png';
   static const String introPage5 = 'assets/images/intro_page5.png';
+  static const String sebha = 'assets/images/Sebha.png';
   static const String chapterDetailsBackground =
       'assets/images/chapter_details_background.png';
   static const String hadethItemBackground =
@@ -46,6 +49,11 @@ class AppThemes {
     ),
     colorScheme: ColorScheme.dark(primary: AppColors.primaryColor),
     textTheme: TextTheme(
+        displayLarge: TextStyle(
+          color: Colors.white,
+          fontSize: 36,
+          fontWeight: FontWeight.bold,
+        ),
       bodyLarge: TextStyle(
         color: Colors.white,
         fontSize: 20,

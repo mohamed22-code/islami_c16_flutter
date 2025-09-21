@@ -21,6 +21,7 @@ class _ChapterDetailsState extends State<ChapterDetails> {
   @override
   Widget build(BuildContext context) {
     var chapter = ModalRoute.of(context)!.settings.arguments as Chapter;
+    saveChapterToLastVisited(chapter);
     if (verses.isEmpty) loadVerses(chapter.chapterIndex);
     return AppScreenWrapper(
       child: Scaffold(
@@ -78,4 +79,3 @@ class _ChapterDetailsState extends State<ChapterDetails> {
     });
   }
 }
-

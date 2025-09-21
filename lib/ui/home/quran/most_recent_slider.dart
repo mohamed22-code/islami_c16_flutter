@@ -60,13 +60,25 @@ class _MostRecentSliderState extends State<MostRecentSlider> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
+                          visitedChapters[index].englishName,
+                          style: Theme.of(
+                            context,
+                          ).textTheme.titleLarge?.copyWith(color: Colors.black),
+                        ),
+                        Text(
                           visitedChapters[index].arabicName,
                           style: Theme.of(
                             context,
-                          ).textTheme.bodyLarge?.copyWith(color: Colors.black),
+                          ).textTheme.titleLarge?.copyWith(color: Colors.black),
                         ),
-                        Text('text1'),
-                        Text('text1'),
+                        Text(
+                          '${visitedChapters[index].versesNumber} Verses',
+                          style: Theme.of(
+                            context,
+                          ).textTheme.titleLarge?.copyWith(color: Colors.black),
+                        ),
+                        //Text('text1'),
+                        //Text('text1'),
                       ],
                     ),
                   ],

@@ -10,7 +10,6 @@ class AppColors {
 }
 
 class AppImages {
-  // static const String ic_time = 'assets/images/ic_time.png';
   static const String ic_time = 'assets/images/ic_time.svg';
   static const String ic_sebha = 'assets/images/ic_sebha.svg';
   static const String ic_radio = 'assets/images/ic_radio.svg';
@@ -26,6 +25,7 @@ class AppImages {
   static const String introPage4 = 'assets/images/intro_page4.png';
   static const String introPage5 = 'assets/images/intro_page5.png';
   static const String sebha = 'assets/images/Sebha.png';
+  static const String imageMostRecent = 'assets/images/image_most_recent.png';
   static const String chapterDetailsBackground =
       'assets/images/chapter_details_background.png';
   static const String hadethItemBackground =

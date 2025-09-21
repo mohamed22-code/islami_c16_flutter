@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:islami/ui/chapter.dart';
 import 'package:islami/ui/design.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:islami/ui/routes.dart';
 
 class ChapterRow extends StatelessWidget {
@@ -29,9 +29,10 @@ class ChapterRow extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: Svg(AppImages.ic_chapter)),
+                    image: DecorationImage(image: Svg(AppImages.ic_chapter,
+                        color: Colors.white)),
                   ),
-                  child: Text("${chapter.chaperIndex}"),
+                  child: Text("${chapter.chapterIndex}"),
                 ),
                 SizedBox(width: 24),
                 Column(

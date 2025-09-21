@@ -3,6 +3,8 @@ import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:islami/ui/chapter.dart';
 import 'package:islami/ui/design.dart';
 import 'package:islami/ui/home/quran/chapter_row.dart';
+import 'package:islami/ui/home/quran/most_recent_slider.dart';
+
 
 class QuranContent extends StatefulWidget {
 
@@ -30,11 +32,15 @@ class _QuranContentState extends State<QuranContent> {
           },
           decoration: InputDecoration(
               hintText: 'Search for chapter',
-              prefix: ImageIcon(Svg(AppImages.ic_quran),
+              prefixIcon: ImageIcon(
+                Svg(
+                  AppImages.ic_quran,
+                ),
                 color: Theme
                     .of(context)
                     .colorScheme
-                    .primary,),
+                    .primary,
+              ),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: Theme
@@ -44,6 +50,7 @@ class _QuranContentState extends State<QuranContent> {
               )
           ),
         ),
+        MostRecentSlider(),
         Expanded(
           child: ListView.separated(
             itemBuilder: (context, index) {
@@ -77,3 +84,4 @@ class _QuranContentState extends State<QuranContent> {
     });
   }
 }
+

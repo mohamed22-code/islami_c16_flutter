@@ -2,10 +2,9 @@
 //   static const String homeScreen = 'home';
 // }
 enum AppRoutes {
+  IntroScreen('intro'),
   HomeScreen('home'),
   ChapterDetails('chapter_details'),
-  IntroScreen('intro'),
-  // SuraDetails('sura_details'),
   ;
 
   final String route;

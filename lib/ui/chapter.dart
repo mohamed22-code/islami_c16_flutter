@@ -350,13 +350,13 @@ class Chapter {
   String arabicName;
   String englishName;
   String versesNumber;
-  int chaperIndex;
+  int chapterIndex;
 
   Chapter(
     this.arabicName,
     this.englishName,
     this.versesNumber,
-    this.chaperIndex,
+    this.chapterIndex,
   );
 
   static List<Chapter> chapters = getQuranChapter();
@@ -370,6 +370,13 @@ class Chapter {
         index + 1,
       ),
     );
+
+    // List<Chapter> allChapters = [];
+    // for(int i=0;i<114;i++){
+    //   allChapters.add(Chapter(arabicAuranSuras[i],
+    //       englishQuranSurahs[i], AyaNumber[i]));
+    // }
+
     return chapters;
   }
 }

@@ -99,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  var tabs = [
+  List<Widget> tabs = [
     QuranContent(),
     HadethContent(),
     SebhaContent(),
